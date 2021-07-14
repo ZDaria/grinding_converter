@@ -19,31 +19,31 @@
     <section>
         <div class="row">
             <div class="col-5">
-                <h2>Наименование кофемолки</h2>
-                <label for="grinder">Выберите вашу кофемолку: </label>
-                <select name="grinder_from">
-                    {% for grinder in grinders_name %}
-                        <option value="{{ grinder }}">{{ grinder }}</option>
-                    {% endfor %}
-                </select><br>
-                <label for="grind_sizes">Помол: </label>
-                <select name="grind_size_from">
-                    {% for grind_size in grind_sizes %}
-                        <option value="{{ grind_size }}">{{ grind_size }}</option>
-                    {% endfor %}
-                </select>
+                <form action="" method="GET">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.grinder_from.label }}
+                         <select class="form-control" name="grinder_from">
+                             {{ form.grinder_from.choices }}
+                         </select>
+                    </div>
+                </form>
+
+                <form action="" method="POST">
+                    {{ form.hidden_tag() }}
+                    <div class="form-group">
+                        {{ form.grind_size.label }}
+                         <select class="form-control" name="grind_size_from">
+                             {{ form.grind_size.choices }}
+                         </select>
+                    </div>
+                </form>
             </div>
             <div class="col-5">
-                <h2>В помол какой кофемолки конвертируем:</h2>
-                    <select grinder_to>
-                    {% for grinder in grinders_name %}
-                        <option value="{{ grinder }}">{{ grinder }}</option>
-                    {% endfor %}
-                </select>
 
             </div>
         </div>
-        </section>
+    </section>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
