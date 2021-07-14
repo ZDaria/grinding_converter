@@ -1,5 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float
-from db import Base, engine
+from grinding_converter.webapp.create_db import Base, engine
+
 
 
 class GrinderName(Base):
@@ -7,6 +8,10 @@ class GrinderName(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
+
+
+    def __repr__(self):
+        return f"{self.id}, {self.name}"
 
 
 class CoffeeGriendFraction(Base):
@@ -25,7 +30,3 @@ class CoffeeGriendFraction(Base):
         return f"{self.id}, {self.grinder_name}, " \
                f"{self.range_factions_more_900}, {self.range_factions_900_600}, " \
                f"{self.range_factions_600_300}, {self.range_factions_less_300}"
-
-
-if __name__ == "__main__":
-    Base.metadata.create_all(bind=engine)
