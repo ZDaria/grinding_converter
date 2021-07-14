@@ -28,5 +28,6 @@ class CoffeeGriendFraction(Base):
 
     def __repr__(self):
         return f"{self.id}, {self.grinder_name}, " \
-               f"{self.range_factions_more_900}, {self.range_factions_900_600}, " \
+               f"{self.range_factions_more_900}, " \
+               f"{self.range_factions_900_600}, " \
                f"{self.range_factions_600_300}, {self.range_factions_less_300}"

@@ -10,8 +10,6 @@ def create_app():
     @app.route('/')
     def index():
         page_title = "Конвертер помола"
-        #def_grinders = GrinderName()
-        #grinders_name = def_grinders.name
         grinders_name = {"Mahlkönig Tanzania Диск 0-9",
                          "Mahlkönig Tanzania Диск 3-15",
                          "Mahlkönig EK43 (turkish) Диск 1-11"}
