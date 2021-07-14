@@ -6,7 +6,8 @@ import configparser
 config = configparser.ConfigParser()
 config.read("../configs/db.ini")
 
-engine = create_engine(config['DEFAULT']['db_string'])
+
+engine = "postgresql://tlsjilgu:7vOzq76hVhMTzy-w2h61tpQeF4pu5Oy@hattie.db.elephantsql.com/tlsjilgu"
 db_session = scoped_session(sessionmaker(bind=engine))
 
 Base = declarative_base()
