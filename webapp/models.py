@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String, Float
-from grinding_converter.webapp.create_db import Base, engine
-
+from webapp.create_db import Base, engine
 
 
 class GrinderName(Base):
@@ -8,7 +7,6 @@ class GrinderName(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String)
-
 
     def __repr__(self):
         return f"{self.id}, {self.name}"

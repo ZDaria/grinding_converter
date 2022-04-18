@@ -1,7 +1,7 @@
 from flask import Flask, render_template
-from .models import GrinderName, CoffeeGriendFraction
+from webapp.models import GrinderName, CoffeeGriendFraction
 
-from .forms import GrindConverterForm
+from webapp.forms import GrindConverterForm
 
 def create_app():
     app = Flask(__name__)
